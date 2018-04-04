@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Homepage</title>
+		<link rel="stylesheet" type="text/css" href="css/homepage.css">
+	</head>
+	<body>
+		<video id="background-stars" autoplay muted loop>
+			<source src="../media/homepage/Stars_background.mp4" type="video/mp4">
+				Your browser does not surrort video playback.
+		</video>
+		<div id="page">
+			<div id="relative-page">
+				<img id="background-window" src="../media/homepage/window.png" alt="window">
+				<div id="glass"></div>
+				<div id="window-container">
+					<div id="window-grid">
+						<h1 id="time" class="window-element"></h1>
+						<div id="weather" class="window-element">
+						</div>
+					</div>
+					<div id="menu">
+						<h1>Settings</h1>
+						<div class="setting clear">
+							<h2 class="settingName">Time</h2>
+							<label class="switch">
+								<input id="timeSwitch" type="checkbox" checked>
+								<span class="slider"></span>
+							</label>
+						</div>
+						<div class="setting clear">
+							<h2 class="settingName">24hour</h2>
+							<label class="switch">
+								<input id="twentyFourHourSwitch" type="checkbox">
+								<span class="slider"></span>
+							</label>
+						</div>
+						<div class="setting clear">
+							<h2 class="settingName">Weather</h2>
+							<label class="switch">
+								<input id="weatherSwitch" type="checkbox" checked>
+								<span class="slider"></span>
+							</label>
+						</div>
+						<div class="setting clear">
+							<h2 class="settingName">Units Celcius/Farenheit</h2>
+							<label class="switch">
+								<input id="unitSwitch" type="checkbox">
+								<span class="slider"></span>
+							</label>
+						</div>
+					</div>
+					<a id="gear" href="#">&#9965;</a> <!-- Gear Icon -->
+				</div> <!-- END window-container div -->
+			</div> <!-- END relative page div -->
+		</div> <!-- END page div -->
+		<script
+		 	src="https://code.jquery.com/jquery-3.3.1.min.js"
+		 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		 	crossorigin="anonymous">
+		 </script>
+		<script type="text/javascript" src="javascript/homepage.js"></script>
+	</body>
+</html>
