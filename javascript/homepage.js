@@ -143,6 +143,14 @@ customizeButton.addEventListener("click", (event) => {
 	}
 });
 
+function toggleElement(element, elementSwitch) {
+	if(elementSwitch.checked){
+		element.style.display = "block";
+	} else {
+		element.style.display = "none";
+	}
+};
+
 	/*--------------------
 		Time switch
 	--------------------*/
@@ -152,16 +160,11 @@ const clockSwitch = document.getElementById("timeSwitch");
 
 
 // on first page load check if box is checked or not
-if(clockSwitch.checked){
-	clock.style.display = "block";
-}
 
-timeSwitch.addEventListener("click", () => {
-	if(clockSwitch.checked){
-		clock.style.display = "block";
-	} else {
-		clock.style.display = "none";
-	}
+toggleElement(clock, clockSwitch);
+
+clockSwitch.addEventListener("click", () => {
+	toggleElement(clock, clockSwitch);
 });
 
 	/*--------------------
@@ -179,16 +182,11 @@ twentyFourHourSwitch.addEventListener("click", () => {
 const weatherSwitch = document.getElementById("weatherSwitch");
 
 // on first page load check if box is chacked or not
-if(weatherSwitch.checked){
-	weather.style.display = "block";
-}
+
+toggleElement(weather, weatherSwitch);
 
 weatherSwitch.addEventListener("click", () => {
-	if(weatherSwitch.checked){
-		weather.style.display = "block";
-	} else {
-		weather.style.display = "none";
-	}
+	toggleElement(weather, weatherSwitch);
 });
 
 	/*--------------------
