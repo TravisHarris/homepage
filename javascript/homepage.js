@@ -54,6 +54,12 @@ startClock();
 let tempUnits = "metric";
 let weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=Newcastle,CA&units=${tempUnits}&APPID=98783f1a9bafb2eec2305ae8a2ac5c59`;
 let weather = document.getElementById("weather");
+const weatherLocation = document.getElementById("weatherLocation");
+
+function setWeatherApi() {
+	let location = weatherLocation.value;
+	weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${tempUnits}&APPID=98783f1a9bafb2eec2305ae8a2ac5c59`;
+}
 
 function setTempUnits(){
 	if(unitSwitch.checked){
@@ -61,7 +67,11 @@ function setTempUnits(){
 	}else{
 		tempUnits = "metric";
 	}
-	weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=Newcastle,CA&units=${tempUnits}&APPID=98783f1a9bafb2eec2305ae8a2ac5c59`;
+	getWeather();
+}
+
+function getWeather() {
+	setWeatherApi();
 	$.getJSON(weatherApi, displayWeather);
 }
 
@@ -119,7 +129,15 @@ function displayWeather(data) {
 	`);
 }
 
-$.getJSON(weatherApi, displayWeather);
+// change location when enter button pressed while focused on weatherLocation text box
+
+weatherLocation.addEventListener("keyup", (event) => {
+	if (event.which == 13) {
+		weatherLocation.blur();
+	}
+});
+
+getWeather();
 
 	/*--------------------
 		Customization
